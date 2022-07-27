@@ -1,0 +1,5 @@
+FROM postgres
+ENV POSTGRES_USER el_zayas_jean
+ENV POSTGRES_PASSWORD password
+ENV POSTGRES_DB covid_data_sets
+EXPOSE 5432
