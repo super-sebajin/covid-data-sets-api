@@ -9,7 +9,9 @@ galois
 sympy
 tensorflow
 pandas
+dotenv
 alembic
+psycopg2
 setuptools-scm
 fastapi>=0.68.0,<0.69.0
 fastapi-sqlalchemy

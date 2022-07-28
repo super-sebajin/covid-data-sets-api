@@ -1,1 +1,6 @@
 **/api_venv
+*.env
+**/postgres
+**/.idea
+**/.history
+**/__pycache__
