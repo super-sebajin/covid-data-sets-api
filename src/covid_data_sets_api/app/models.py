@@ -6,42 +6,8 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
 Base = declarative_base()
-
-
-class CovidDataSets(Base):
-    __tablename__ = 'covid_data_sets'
-    id = Column(
-        UUIDType,
-        primary_key=True,
-        unique=True,
-        nullable=False
-    )
-    data_set_name = Column(
-        String,
-        nullable=False
-    )
-    dataset_public_url = Column(
-        String,
-        nullable=False
-    )
-    dataset_public_url_method = Column(
-        String,
-        nullable=False
-    )
-    provider_long_name = Column(
-        String,
-        nullable=False,
-        default=''
-    )
-    provider_short_name = Column(
-        String,
-        nullable=False,
-        default=''
-    )
-
-
 class CovidCasesOverTimeUsa(Base):
-    __tablename__ = "covid_cases_over_time_usa",
+    __tablename__ = "covid_cases_over_time_usa"
     id = Column(
         UUIDType,
         primary_key=True,
@@ -68,4 +34,35 @@ class CovidCasesOverTimeUsa(Base):
         UUIDType,
         ForeignKey('covid_data_sets.id')
     )
+    data_set = relationship('CovidDataSets')
 
+class CovidDataSets(Base):
+    __tablename__ = "covid_data_sets"
+    id = Column(
+        UUIDType,
+        primary_key=True,
+        unique=True,
+        nullable=False
+    )
+    data_set_name = Column(
+        String,
+        nullable=False
+    )
+    data_set_public_url = Column(
+        String,
+        nullable=False
+    )
+    data_set_public_url_method = Column(
+        String,
+        nullable=False
+    )
+    provider_long_name = Column(
+        String,
+        nullable=False,
+        default=''
+    )
+    provider_short_name = Column(
+        String,
+        nullable=False,
+        default=''
+    )
