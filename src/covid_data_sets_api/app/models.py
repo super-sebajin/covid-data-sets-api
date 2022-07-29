@@ -1,5 +1,6 @@
 from sqlalchemy import Column, ForeignKey, String, DateTime, Integer
 #from sqlalchemy.dialects.postgresql import UUID
+from uuid import uuid4
 from sqlalchemy_utils import UUIDType
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
@@ -12,7 +13,8 @@ class CovidCasesOverTimeUsa(Base):
         UUIDType,
         primary_key=True,
         unique=True,
-        nullable=False
+        nullable=False,
+        default=uuid4
     )
     date_stamp = Column(
         DateTime,
@@ -42,7 +44,8 @@ class CovidDataSets(Base):
         UUIDType,
         primary_key=True,
         unique=True,
-        nullable=False
+        nullable=False,
+        default=uuid4
     )
     data_set_name = Column(
         String,
