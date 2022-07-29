@@ -50,7 +50,5 @@ async def delete_covid_data_set(id: UUID):
             db.session.commit()
             return GenericResponse(True)
     except Exception as ex: 
-        print("inside")
-        
         return GenericResponse(False, str(ex))
  
