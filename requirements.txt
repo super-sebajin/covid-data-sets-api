@@ -20,3 +20,5 @@ pydantic>=1.8.0,<2.0.0
 uvicorn>=0.15.0,<0.16.0
 gunicorn 
 databases[postgresql]
+python-jose[cryptography]
+passlib[bcrypt]

@@ -69,3 +69,25 @@ class CovidDataSets(Base):
         nullable=False,
         default=''
     )
+    
+class ApiUser(Base):
+    __tablename__ = "api_user"
+    id = Column(
+        UUIDType,
+        nullable=False,
+        default=uuid4,
+        primary_key=True,
+    )
+    username = Column(
+        String,
+        nullable=False
+    )
+    password = Column(
+        String,
+        nullable=False
+    )
+    disabled = Column(
+        bool,
+        nullable=False,
+        default=False
+    )
