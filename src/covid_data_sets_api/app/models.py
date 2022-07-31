@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, String, DateTime, Integer
+from sqlalchemy import Column, ForeignKey, String, DateTime, Integer, Boolean
 #from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from sqlalchemy_utils import UUIDType
@@ -87,7 +87,7 @@ class ApiUser(Base):
         nullable=False
     )
     disabled = Column(
-        bool,
+        Boolean,
         nullable=False,
         default=False
     )

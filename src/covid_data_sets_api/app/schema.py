@@ -30,6 +30,7 @@ class ApiUser(BaseModel):
     id: Optional[UUID]
     username: str
     password: str
+    disabled: bool
 
     class Config:
         orm_mode=True
